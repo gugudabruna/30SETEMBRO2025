@@ -35,22 +35,22 @@ class MainScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("sky", "/30SET/imagens/subconciente.jpg");
-    this.load.image("door", "/30SET/imagens/portal.png");
+    this.load.image("sky", "imagens/subconciente.jpg");
+    this.load.image("door", "imagens/portal.png");
 
     // Ursinho
-    this.load.image("bear_static", "/30SET/sprites/miks/static.png");
-    this.load.image("bear_walk1", "/30SET/sprites/miks/walk1.png");
-    this.load.image("bear_walk2", "/30SET/sprites/miks/walk2.png");
-    this.load.image("bear_walk3", "/30SET/sprites/miks/walk3.png");
-    this.load.image("bear_walk4", "/30SET/sprites/miks/walk4.png");
+    this.load.image("bear_static", "sprites/miks/static.png");
+    this.load.image("bear_walk1", "sprites/miks/walk1.png");
+    this.load.image("bear_walk2", "sprites/miks/walk2.png");
+    this.load.image("bear_walk3", "sprites/miks/walk3.png");
+    this.load.image("bear_walk4", "sprites/miks/walk4.png");
 
     // Bombas
-    this.load.image("bomb1", "/30SET/imagens/bombaclara.png");
-    this.load.image("bomb2", "/30SET/imagens/bombalidia.png");
+    this.load.image("bomb1", "imagens/bombaclara.png");
+    this.load.image("bomb2", "imagens/bombalidia.png");
 
     // Plataforma simples (um bloco)
-    this.load.image("ground", "/30SET/imagens/ground.png");
+    this.load.image("ground", "imagens/ground.png");
   }
 
   create() {
@@ -164,8 +164,8 @@ class MainScene extends Phaser.Scene {
       openModal("modalInfo");
       document.getElementById("infoTitle").innerText = "Kitty 💖 Bruna";
       document.getElementById("infoBody").innerHTML = `
-        <img src="/30SET/imagens/kitty-bruna1.png" width="300" />
-        <img src="/30SET/imagens/kitty-bruna2.png" width="300" />
+        <img src="imagens/kitty-bruna1.png" width="300" />
+        <img src="imagens/kitty-bruna2.png" width="300" />
       `;
     });
   }
@@ -250,27 +250,32 @@ class MainScene extends Phaser.Scene {
       this.player.setTint(0xff0000);
 
       // fundo preto cobrindo tela
-      this.add.rectangle(
-        this.cameras.main.midPoint.x,
-        this.cameras.main.midPoint.y,
-        this.cameras.main.width,
-        this.cameras.main.height,
-        0x000000,
-        0.8
-      ).setScrollFactor(0);
+      this.add
+        .rectangle(
+          this.cameras.main.midPoint.x,
+          this.cameras.main.midPoint.y,
+          this.cameras.main.width,
+          this.cameras.main.height,
+          0x000000,
+          0.8
+        )
+        .setScrollFactor(0);
 
       // texto grande no meio
-      this.add.text(
-        this.cameras.main.midPoint.x,
-        this.cameras.main.midPoint.y,
-        "GAME OVER\nClique para reiniciar",
-        {
-          fontFamily: "Press Start 2P",
-          fontSize: "48px",
-          color: "#fff",
-          align: "center"
-        }
-      ).setOrigin(0.5).setScrollFactor(0);
+      this.add
+        .text(
+          this.cameras.main.midPoint.x,
+          this.cameras.main.midPoint.y,
+          "GAME OVER\nClique para reiniciar",
+          {
+            fontFamily: "Press Start 2P",
+            fontSize: "48px",
+            color: "#fff",
+            align: "center",
+          }
+        )
+        .setOrigin(0.5)
+        .setScrollFactor(0);
 
       this.input.once("pointerdown", () => {
         this.scene.restart();

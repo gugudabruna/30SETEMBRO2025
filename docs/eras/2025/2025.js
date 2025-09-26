@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hover do botão voltar
   if (btnVoltar) {
     btnVoltar.addEventListener("mouseenter", () => {
-      btnVoltar.src = "/30SET/imagens/voltar-hover.png";
+      btnVoltar.src = "imagens/voltar-hover.png";
     });
 
     btnVoltar.addEventListener("mouseleave", () => {
-      btnVoltar.src = "/30SET/imagens/voltar.png";
+      btnVoltar.src = "imagens/voltar.png";
     });
   }
 
@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
 
     if (iframe) {
-      const src = iframe.src; 
-      iframe.src = "";        // limpa → para totalmente
-      iframe.src = src;       // restaura → volta do começo
+      const src = iframe.src;
+      iframe.src = ""; // limpa → para totalmente
+      iframe.src = src; // restaura → volta do começo
     }
   }
 });

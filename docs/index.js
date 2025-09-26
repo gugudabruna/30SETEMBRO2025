@@ -16,18 +16,23 @@ function atualizarContador() {
   if (dias < 1000) {
     diasFormatados = dias.toString().padStart(3, "0");
   } else {
-    diasFormatados = dias.toLocaleString("pt-BR"); 
+    diasFormatados = dias.toLocaleString("pt-BR");
   }
 
   document.getElementById("contador-dias").textContent = diasFormatados;
-  document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
-  document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
-  document.getElementById("segundos").textContent = segundos.toString().padStart(2, "0");
+  document.getElementById("horas").textContent = horas
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("minutos").textContent = minutos
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("segundos").textContent = segundos
+    .toString()
+    .padStart(2, "0");
 }
 
 setInterval(atualizarContador, 1000);
 atualizarContador();
-
 
 const anos = [2007, 2014, 2020, 2021, 2022, 2023, 2024, 2025];
 let indiceAtual = 2; // por padrão 2020
@@ -96,25 +101,25 @@ const setaBaixo = document.getElementById("seta-baixo");
 const btnVoltar = document.getElementById("voltar-btn");
 
 setaCima.addEventListener("mouseenter", () => {
-  setaCima.src = "/30SET/imagens/up-hover.png";
-});
-setaCima.addEventListener("mouseleave", () => {
-  setaCima.src = "/30SET/imagens/up.png";
+  setaCima.src = "imagens/up-hover.png";
+  setaCima.addEventListener("mouseleave", () => {
+    setaCima.src = "imagens/up.png";
+  });
 });
 
 setaBaixo.addEventListener("mouseenter", () => {
-  setaBaixo.src = "/30SET/imagens/down-hover.png";
+  setaBaixo.src = "imagens/down-hover.png";
 });
 setaBaixo.addEventListener("mouseleave", () => {
-  setaBaixo.src = "/30SET/imagens/down.png";
+  setaBaixo.src = "imagens/down.png";
 });
 
 // botão voltar
 btnVoltar.addEventListener("mouseenter", () => {
-  btnVoltar.src = "/30SET/imagens/voltar-hover.png";
+  btnVoltar.src = "imagens/voltar-hover.png";
 });
 btnVoltar.addEventListener("mouseleave", () => {
-  btnVoltar.src = "/30SET/imagens/voltar.png";
+  btnVoltar.src = "imagens/voltar.png";
 });
 
 function createHeart() {

@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btnVoltar = document.getElementById("voltar-btn2023");
+  const btnVoltar = document.getElementById("voltar-btn2007");
 
   // Só adiciona eventos se o botão existir
   if (btnVoltar) {
     btnVoltar.addEventListener("mouseenter", () => {
-      btnVoltar.src = "/30SET/imagens/voltar-hover.png";
+      btnVoltar.src = "imagens/voltar-hover.png";
     });
 
     btnVoltar.addEventListener("mouseleave", () => {
-      btnVoltar.src = "/30SET/imagens/voltar.png";
+      btnVoltar.src = "imagens/voltar.png";
     });
   }
 
