@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV - 2023</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../imagens/icone.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../imagens/icone.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../imagens/icone.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./2023.css" />
+</head>
+
+<body class="era-2023">
+    <div class="fundo">
+        <!-- Botão voltar -->
+    <a href="../../index.html#anos" aria-label="Voltar">
+        <img id="voltar-btn2023" src="../../imagens/voltar.png" alt="Voltar">
+      </a>
+
+        <!-- fundo com corações -->
+        <div id="background"></div>
+
+
+        <div class="tv-container">
+            <img src="../../imagens/tv.png" class="tv-frame" alt="Televisão">
+            <div class="conteudo-na-tv">
+
+
+                <video autoplay muted loop playsinline>
+                    <source src="../2023/media/era2023.mp4" type="video/mp4" />
+                    Seu navegador não suporta vídeos em HTML5.
+                </video>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="modalVideo" class="modal">
+            <div class="modal-content color-border">
+                <span class="fechar-modal">&times;</span>
+                <video>
+                    <source src="../2023/media/2023video.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <script src="../../index.js"></script>
+    <script src="./2023.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+
+</html>

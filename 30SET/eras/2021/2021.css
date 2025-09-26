@@ -1,0 +1,285 @@
+/* === ERA 2021 === */
+.era-2021 {
+  background: linear-gradient(to left, #4b2e12, #d57a33);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: "Monterrat", sans-serif;
+  position: relative;
+}
+
+.era-2021 #ano-selecionado {
+  background-color: #ffffff;
+  color: #4b2e12;
+  transition: 0.6s ease;
+}
+
+.era-2021 #ano-selecionado:hover {
+  background-color: #4b2e12;
+  color: white;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+.era-2021 #selecionar-btn {
+  color: white;
+  transition: 0.6s ease;
+}
+
+.era-2021 #selecionar-btn:hover {
+  font-size: 3.2rem;
+  box-shadow: 0 0 30px rgba(255, 161, 9, 0.5);
+  background-color: #fadfca;
+  transition: 0.6s ease;
+  border: 2px solid #d57a33;
+  color: #d57a33;
+}
+
+/* === BODY === */
+.constelacao-body {
+  margin: 0;
+  background: radial-gradient(circle at center, #0a0a1f, #000000 90%);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Fundo com estrelas pequenas */
+.constelacao-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(#9d4edd 1px, transparent 1px),
+                    radial-gradient(#00f5d4 2px, transparent 2px),
+                    radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 120px 120px, 200px 200px, 180px 180px, 250px 250px;
+  background-position: 0 0, 60px 80px, 120px 40px, 30px 60px;
+  animation: fundoMovendo 120s linear infinite;
+  z-index: 0;
+}
+
+@keyframes fundoMovendo {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-200px, -200px); }
+}
+
+/* === CONSTELAÇÃO === */
+.constelacao {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Estrelas interativas */
+.estrela {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  animation: piscar 2s infinite alternate;
+}
+
+/* Estrelas coloridas */
+.estrela:nth-child(3n) {
+  background: #ffffff;
+  color: #ffffff;
+}
+.estrela:nth-child(3n + 1) {
+  background: #9d4edd;
+  color: #9d4edd;
+}
+.estrela:nth-child(3n + 2) {
+  background: #00f5d4;
+  color: #00f5d4;
+}
+
+@keyframes piscar {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+/* === MODAL === */
+.modal {
+  display: none; /* começa fechado */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Modal Imagem */
+.modal-img, .modal-content img {
+  max-width: 90vw;   /* largura máxima */
+  max-height: 85vh;  /* altura máxima */
+  width: auto;       /* deixa o navegador calcular */
+  height: auto;      /* deixa o navegador calcular */
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(173, 216, 230, 0.9),
+              0 0 50px rgba(106, 90, 205, 0.7);
+  transition: transform 0.5s ease;
+}
+
+
+.modal-content img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.modal-text {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Estrelas animadas no modal */
+.modal-content::before,
+.modal-content::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  animation: moverEstrelas 40s linear infinite;
+  z-index: 0;
+}
+.modal-content::after {
+  opacity: 0.1;
+  background-size: 100px 100px;
+  animation-duration: 70s;
+}
+
+.modal-content p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #e0e0ff;
+  text-shadow: 0 0 10px rgba(200, 200, 255, 0.8);
+}
+
+/* Botão fechar */
+.fechar {
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #6a0dad, #1e90ff);
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(106, 13, 173, 0.7);
+  transition: all 0.3s ease;
+}
+
+.fechar:hover {
+  background: linear-gradient(135deg, #1e90ff, #6a0dad);
+  box-shadow: 0 0 30px rgba(106, 13, 173, 1), 0 0 50px rgba(30, 144, 255, 0.9);
+  transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes flutuar {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(10px); }
+}
+
+@keyframes moverEstrelas {
+  from { transform: translate(0, 0); }
+  to { transform: translate(60px, 60px); }
+}
+
+/* Botão voltar */
+#voltar-btn2021 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  z-index: 20;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+#voltar-btn2021:hover {
+  width: 45px;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Estrelas maiores em telas menores */
+@media (max-width: 1200px) {
+  .estrela { width: 14px; height: 14px; }
+}
+
+@media (max-width: 768px) {
+  .estrela { width: 18px; height: 18px; }
+}
+
+@media (max-width: 480px) {
+  .estrela { width: 22px; height: 22px; }
+}
+
+/* Modal responsivo */
+@media (max-width: 1200px) {
+  .modal-content img { width: 50%; max-width: 80%; }
+}
+
+@media (max-width: 768px) {
+  .modal-content img { width: 70%; max-width: 90%; }
+  .modal-content { transform: scale(0.9); }
+}
+
+@media (max-width: 480px) {
+  .modal-content img { width: 90%; max-width: 95%; }
+  .modal-content { transform: scale(1); }
+  .modal-text { font-size: 1.1rem; }
+}

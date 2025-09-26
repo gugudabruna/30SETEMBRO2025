@@ -1,0 +1,518 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.heart {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+
+  transform: rotate(45deg);
+  animation: float 10s linear infinite;
+  z-index: 9999;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+.heart::before {
+  top: -7.5px;
+  left: 0;
+}
+.heart::after {
+  left: 7.5px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, -200px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  overflow: hidden;
+  animation: gradientAnimation 2s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, #450050, #cb6ce6);
+  background-size: 200% 200%;
+  transition: background 0.5s ease-in-out;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.116);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px;
+  font-family: "Montserrat";
+  text-align: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 40px rgb(212, 19, 255);
+  transition: 1s ease;
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.116);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  font-size: 70px;
+  font-family: "Montserrat";
+  color: #cf0dff;
+  padding: 70px;
+  text-align: center;
+  border: 5px solid #cf0dff;
+  box-shadow: 0 0 40px rgb(251, 0, 255);
+  transition: 1s ease;
+}
+
+.dias {
+  font-size: 96px;
+  font-weight: bold;
+  transition: 1s ease;
+}
+.dias:hover {
+  font-size: 136px;
+  font-weight: bold;
+  transition: 1s ease;
+  color: #e100ff;
+  cursor: pointer;
+}
+
+.label {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.unit {
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.data {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.seletor-anos {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+  margin-top: 40px;
+}
+
+#ano-anterior {
+  font-size: 70px;
+  font-weight: 100;
+}
+#ano-selecionado {
+  font-size: 100px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #450050;
+  transition: 0.6s ease;
+  font-weight: bold;
+}
+
+#ano-posterior {
+  font-size: 70px;
+  font-weight: 100;
+}
+.anos-visiveis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ano {
+  opacity: 0.5;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.ano.grande {
+  font-size: 36px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.ano.pequeno {
+  font-size: 20px;
+}
+
+/* Classe para animação de transição suave */
+.fade {
+  animation: fade 0.3s ease;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: gradientAnimation 2s ease-in-out infinite alternate;
+}
+#seta-cima,
+#seta-baixo {
+  width: 30px;
+}
+
+/* Remove o efeito de clique para não sobrescrever */
+button.btn img.setas {
+  transition: 0.3s ease;
+}
+.seta-cima,
+.seta-baixo {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+}
+
+/* imagem normal */
+#seta-cima {
+  background-image: url("/30SET/imagens/up.png");
+  transition: 0.6s ease;
+}
+#seta-baixo {
+  background-image: url("/30SET/imagens/down.png");
+  transition: 0.6s ease;
+}
+
+/* imagem no hover */
+#seta-cima:hover {
+  background-image: url("/30SET/imagens/up-hover.png");
+  width: 45px;
+  transition: 0.6s ease;
+}
+#seta-baixo:hover {
+  background-image: url("/30SET/imagens/down-hover.png");
+  width: 45px;
+  transition: 0.6s ease;
+}
+
+#selecionar-btn {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: white;
+  transition: 0.6s ease;
+}
+#selecionar-btn:hover {
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  color: #450050;
+  transition: 0.6s ease;
+}
+
+#voltar-btn {
+  display: flex;
+  justify-content: flex-start;
+  background-image: url("/30SET/imagens/voltar.png");
+  transition: 0.6s ease;
+  width: 40px;
+}
+#voltar-btn:hover {
+  background-image: url("/30SET/imagens/voltar-hover.png");
+  transition: 0.6s ease;
+  width: 45px;
+}
+
+/* Estilos por ano */
+
+.heart-2007,
+.heart-2007::before,
+.heart-2007::after {
+  background-color: #6e8cfb;
+}
+
+.heart-2014,
+.heart-2014::before,
+.heart-2014::after {
+  background-color: #ffffff;
+}
+
+.heart-2015,
+.heart-2015::before,
+.heart-2015::after {
+  background-color: #ff5e00;
+}
+
+.heart-2020,
+.heart-2020::before,
+.heart-2020::after {
+  background-color: #a564ff;
+}
+
+.heart-2021,
+.heart-2021::before,
+.heart-2021::after {
+  background-color: #672b01;
+}
+
+.heart-2022,
+.heart-2022::before,
+.heart-2022::after {
+  background-color: #ef0000;
+}
+
+.heart-2023,
+.heart-2023::before,
+.heart-2023::after {
+  background-color: #007029;
+}
+
+.heart-2024,
+.heart-2024::before,
+.heart-2024::after {
+  background-color: #680063;
+}
+
+.heart-2025,
+.heart-2025::before,
+.heart-2025::after {
+  background-color: #b659e6;
+}
+
+/* ----------- RESPONSIVIDADE ----------- */
+
+/* Telas médias (tablets) */
+@media (max-width: 1024px) {
+  .card {
+    padding: 40px;
+    font-size: 0.9rem;
+  }
+
+  .dias {
+    font-size: 72px;
+  }
+
+  .dias:hover {
+    font-size: 100px;
+  }
+
+  #ano-selecionado {
+    font-size: 72px;
+    padding: 8px 16px;
+  }
+
+  #ano-anterior,
+  #ano-posterior {
+    font-size: 50px;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  body,
+  html {
+    overflow: auto; /* permite rolar em telas pequenas */
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .dias {
+    font-size: 48px;
+  }
+
+  .dias:hover {
+    font-size: 64px;
+  }
+
+  .label {
+    font-size: 18px;
+  }
+
+  .timer {
+    font-size: 14px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .data {
+    font-size: 12px;
+  }
+
+  #ano-selecionado {
+    font-size: 48px;
+    padding: 6px 12px;
+  }
+
+  #ano-anterior,
+  #ano-posterior {
+    font-size: 32px;
+  }
+
+  #selecionar-btn {
+    font-size: 1.2rem;
+  }
+
+  #selecionar-btn:hover {
+    font-size: 1.5rem;
+  }
+
+  #voltar-btn {
+    width: 32px;
+  }
+
+  #voltar-btn:hover {
+    width: 36px;
+  }
+}
+
+/* ----------- Ajustes para o seletor de anos ----------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .seletor-anos {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .anos-visiveis {
+    gap: 6px;
+  }
+
+  .ano {
+    font-size: 18px;
+  }
+
+  .ano.grande {
+    font-size: 28px;
+  }
+
+  .ano.pequeno {
+    font-size: 16px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .seletor-anos {
+    margin-top: 15px;
+    gap: 6px;
+  }
+
+  .anos-visiveis {
+    gap: 4px;
+  }
+
+  .ano {
+    font-size: 14px;
+  }
+
+  .ano.grande {
+    font-size: 20px;
+  }
+
+  .ano.pequeno {
+    font-size: 12px;
+  }
+
+  #ano-anterior,
+  #ano-posterior {
+    font-size: 24px;
+  }
+
+  #ano-selecionado {
+    font-size: 32px;
+    padding: 4px 8px;
+  }
+}
+
+/* ----------- Ajustes para vídeo no modal ----------- */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal video,
+.modal iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsivo em celulares */
+@media (max-width: 600px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .modal video,
+  .modal iframe {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* evita ocupar a tela toda */
+  }
+}

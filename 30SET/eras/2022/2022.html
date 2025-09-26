@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Planeta Bruna</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../imagens/icone.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../imagens/icone.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../imagens/icone.png">
+  <link rel="stylesheet" href="./2022.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Importmap para usar módulos do Three.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.148.0/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+    </script>
+</head>
+
+<body>
+  <!-- Botão voltar -->
+  <a href="../../index.html#anos" aria-label="Voltar">
+    <img id="voltar-btn2021" src="../../imagens/voltar.png" alt="Voltar">
+  </a>
+
+
+<!-- Título planeta  -->
+<h1 id="texto-plnt">Planeta Bruna</h1>
+
+<!-- Modal exclusivo do Planeta -->
+<div id="planetaModal" class="modal-planeta">
+  <div class="modal-planeta-content">
+    <span id="fecharPlaneta">&times;</span>
+    <h2>🌌 Planeta Bruna</h2>
+    <p>
+      Um planeta misterioso, envolto em uma névoa cósmica que brilha em tons de roxo e azul.
+      Suas nuvens lembram memórias e sonhos que orbitam como estrelas cadentes.
+    </p>
+    <ul>
+      <li><b>Tamanho:</b> 87.000 km de diâmetro (cerca de 7 vezes maior que a Terra)</li>
+      <li><b>Peso/Massa:</b> 4,6 × 10²⁶ kg</li>
+      <li><b>Composição:</b> Atmosfera composta por hélio, hidrogênio e partículas cristalinas que refletem a luz como purpurina cósmica.</li>
+      <li><b>Clima:</b> Variações constantes de tempestades de energia rosa e calmarias brilhantes.</li>
+      <li><b>Órbita:</b> Alinhado com um cinturão estelar onde brilham constelações em movimento.</li>
+      <li><b>Superfície:</b> Líquida e translúcida, refletindo as estrelas como se fosse um imenso oceano cósmico.</li>
+      <li><b>Característica marcante:</b> Anéis luminosos em tom rosa, que brilham e mudam de cor conforme a órbita.</li>
+      <li><b>Curiosidade:</b> Seus anéis são formados por fragmentos de sonhos e memórias, que vagam como pequenos satélites.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+  <div id="container"></div>
+
+  <!-- Modal -->
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span id="fechar">&times;</span>
+      <div id="infoContent"></div>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script type="module" src="./2022.js"></script>
+  <script type="module" src="./2022modalplaneta.js"></script>
+</body>
+
+</html>

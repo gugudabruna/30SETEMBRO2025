@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+:root {
+  --roxo: #6492ff;
+  --bg-grad-ini: #0d011c;
+  --bg-grad-meio: #2d014d;
+  --bg-grad-fim: #001972;
+}
+
+/* =========================
+   ESTILO GERAL
+========================= */
+.era-2020 {
+  background: linear-gradient(
+    to left,
+    var(--bg-grad-ini),
+    var(--bg-grad-meio),
+    var(--bg-grad-fim)
+  );
+  gap: -50px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* =========================
+   BOTÕES E SELEÇÕES
+========================= */
+.era-2020 #ano-selecionado {
+  background-color: #1a002d;
+  border: 3px solid var(--roxo);
+  color: var(--roxo);
+  transition: 0.6s ease;
+  border-radius: 12px;
+}
+.era-2020 #ano-selecionado:hover {
+  background-color: var(--roxo);
+  color: #1a002d;
+  box-shadow: 0 0 40px rgba(165, 100, 255, 0.6);
+}
+
+.era-2020 #selecionar-btn {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid var(--roxo);
+  transition: 0.6s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+.era-2020 #selecionar-btn:hover {
+  background-color: var(--roxo);
+  color: #0d011c;
+  font-size: 3.2rem;
+  box-shadow: 0 0 30px rgba(165, 100, 255, 0.5);
+}
+
+/* =========================
+   FUNDO + TV
+========================= */
+.fundo {
+  position: relative;
+  background-image: url("../../imagens/fundocinza.png");
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+}
+.tv-container {
+  position: relative;
+  width: min(1200px, 85vw);
+  margin: auto;
+  cursor: pointer;
+  --screen-top: 25.5%;
+  --screen-left: 19%;
+  --screen-width: 45%;
+  --screen-height: 57.5%;
+}
+
+/* Conteúdo dentro da TV fica atrás */
+.conteudo-na-tv {
+  position: absolute;
+  top: var(--screen-top);
+  left: var(--screen-left);
+  width: var(--screen-width);
+  height: var(--screen-height);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Moldura da TV fica sempre na frente */
+.tv-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.conteudo-na-tv > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   MODAIS
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.65);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  position: relative;
+  padding: 5px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) brightness(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.12);
+}
+.color-border {
+  background-color: #ffe6f0;
+}
+
+/* ===== Modal Info refinado ===== */
+#modalInfo .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #1a002d, #3c006e 70%);
+  border: 2px solid #a564ff;
+  border-radius: 20px;
+  padding: 20px 28px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(165, 100, 255, 0.4);
+  gap: 16px;
+}
+#infoTitle {
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  color: #ffe6f0;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 200, 255, 0.8);
+}
+
+/* grid mais compacto */
+#infoBody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  justify-items: center;
+  width: 100%;
+}
+
+/* estiliza as imagens inseridas pelo innerHTML */
+#infoBody img,
+#infoBody .modal-photo {
+  width: 50% !important;
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid #ffe6f0;
+  box-shadow: 0 0 18px rgba(255, 200, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+#infoBody img:hover,
+#infoBody .modal-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 26px rgba(255, 200, 255, 0.6);
+}
+
+/* botão fechar com vibe pixel */
+#modalInfo .fechar-modal {
+  top: -12px;
+  right: -12px;
+  background: #a564ff;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Pixelify Sans", monospace;
+  padding: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+#modalInfo .fechar-modal:hover {
+  background: #fff;
+  color: #a564ff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
+}
+
+.info-content {
+  max-width: min(900px, 90vw);
+  max-height: 85vh;
+  overflow: auto;
+  padding: 18px;
+}
+.fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 26px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  padding: 6px 12px;
+  cursor: pointer;
+  z-index: 99999;
+  line-height: 1;
+}
+
+/* Canvas do jogo */
+#game {
+  width: min(960px, 90vw);
+  height: min(600px, 70vh);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+#voltar-btn2020 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  z-index: 20;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+#voltar-btn2020:hover {
+  width: 45px;
+  transition: 0.6s ease;
+}
+
+/* =========================
+   HUD do jogo
+========================= */
+.hint {
+  font: 16px monospace;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* 📱 Ajustes para celular */
+@media (max-width: 600px) {
+  .fundo {
+    padding-bottom: 0; /* faz a TV encostar na mesa */
+    background-position: center bottom;
+  }
+
+  .tv-container {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .conteudo-na-tv iframe,
+  .conteudo-na-tv video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preenche a tela da TV */
+  }
+}
+
+/* =========================
+   Botões móveis estilo Game Boy 
+========================= */
+/* Controles só aparecem no mobile */
+#mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mobile-controls {
+    display: flex;
+    justify-content: space-between;
+    position: fixed; /* 👈 era absolute, troca pra fixed */
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 999999; /* garante que fique acima */
+    pointer-events: auto;
+  }
+
+  .dpad {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dpad .middle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ab-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-right: 20px;
+    align-items: flex-end;
+  }
+
+  #mobile-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(100, 146, 255, 0.7);
+    color: white;
+    text-shadow: 0 0 4px black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+
+  #mobile-controls button:active {
+    background: #6492ff;
+    transform: scale(0.95);
+  }
+}

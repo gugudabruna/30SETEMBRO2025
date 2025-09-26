@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>2020 - Jogo</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../imagens/icone.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../imagens/icone.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../imagens/icone.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./2020.css" />
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+</head>
+
+<body class="era-2020">
+  <div class="fundo">
+    <!-- Botão Voltar -->
+    <a href="../../index.html#anos" aria-label="Voltar">
+      <img id="voltar-btn2020" src="../../imagens/voltar.png" alt="Voltar" />
+    </a>
+
+    <!-- TV que abre o jogo -->
+    <div class="tv-container">
+      <img src="/30SET/imagens/tv.png" class="tv-frame" alt="Televisão" />
+      <div class="conteudo-na-tv" id="tv-video">
+        <video autoplay muted loop playsinline>
+          <source src="./mídia/era2020.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Jogo -->
+  <div id="modalGame" class="modal" aria-hidden="true">
+    <div class="modal-content color-border">
+      <button class="fechar-modal" aria-label="Fechar" data-close="modalGame">&times;</button>
+      <div id="game" class="game-root"></div>
+    </div>
+    
+    <div id="mobile-controls">
+      <div class="dpad">
+        <button id="btn-up">▲</button>
+        <div class="middle">
+          <button id="btn-left">◀</button>
+          <button id="btn-right">▶</button>
+        </div>
+        <button id="btn-down">▼</button>
+      </div>
+      <div class="ab-buttons">
+        <button id="btn-a">A</button>
+        <button id="btn-b">B</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  <!-- MODAL: Info -->
+  <div id="modalInfo" class="modal" aria-hidden="true">
+    <div class="modal-content color-border info-content">
+      <button class="fechar-modal" aria-label="Fechar" data-close="modalInfo">&times;</button>
+      <h2 id="infoTitle">Título</h2>
+      <div id="infoBody">Aqui entra o conteúdo dinâmico (texto, imagem ou vídeo).</div>
+    </div>
+  </div>
+
+  <!-- scripts globais -->
+  <script src="../../index.js"></script>
+  <!-- script desta era -->
+  <script src="./2020.js" defer></script>
+  <script src="./game.js" defer></script>
+</body>
+
+</html>
