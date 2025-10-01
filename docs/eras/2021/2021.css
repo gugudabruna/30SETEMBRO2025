@@ -269,7 +269,7 @@
 
 /* === MODAL RESPONSIVO === */
 @media (max-width: 1200px) {
-  .modal-content img { width: 60%; max-width: 85%; }
+  .modal-content img { width: 75%; max-width: 85%; }
 }
 
 @media (max-width: 768px) {
