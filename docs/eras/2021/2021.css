@@ -11,13 +11,14 @@
 }
 
 .era-2021 #ano-selecionado {
-  background-color: #ffffff;
-  color: #4b2e12;
+  background-color: transparent;
+  color: #ff923e;
+  border: 4px solid #ff923e;
   transition: 0.6s ease;
 }
 
 .era-2021 #ano-selecionado:hover {
-  background-color: #4b2e12;
+  background-color: #ff923e;
   color: white;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
 }
@@ -58,9 +59,9 @@
   width: 200%;
   height: 200%;
   background-image: radial-gradient(white 1px, transparent 1px),
-                    radial-gradient(#9d4edd 1px, transparent 1px),
-                    radial-gradient(#00f5d4 2px, transparent 2px),
-                    radial-gradient(#ffffff 1px, transparent 1px);
+    radial-gradient(#9d4edd 1px, transparent 1px),
+    radial-gradient(#00f5d4 2px, transparent 2px),
+    radial-gradient(#ffffff 1px, transparent 1px);
   background-size: 120px 120px, 200px 200px, 180px 180px, 250px 250px;
   background-position: 0 0, 60px 80px, 120px 40px, 30px 60px;
   animation: fundoMovendo 120s linear infinite;
@@ -68,8 +69,12 @@
 }
 
 @keyframes fundoMovendo {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-200px, -200px); }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -200px);
+  }
 }
 
 /* === CONSTELAÇÃO === */
@@ -106,8 +111,14 @@
 }
 
 @keyframes piscar {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.2); }
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 /* === MODAL === */
@@ -151,18 +162,18 @@
 }
 
 /* Modal Imagem */
-.modal-img, .modal-content img {
-  max-width: 90vw;   /* largura máxima */
-  max-height: 85vh;  /* altura máxima */
-  width: auto;       /* deixa o navegador calcular */
-  height: auto;      /* deixa o navegador calcular */
+.modal-img,
+.modal-content img {
+  max-width: 90vw; /* largura máxima */
+  max-height: 85vh; /* altura máxima */
+  width: auto; /* deixa o navegador calcular */
+  height: auto; /* deixa o navegador calcular */
   object-fit: contain;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(173, 216, 230, 0.9),
-              0 0 50px rgba(106, 90, 205, 0.7);
+    0 0 50px rgba(106, 90, 205, 0.7);
   transition: transform 0.5s ease;
 }
-
 
 .modal-content img:hover {
   transform: scale(1.05) rotate(1deg);
@@ -229,13 +240,21 @@
 
 /* Animações */
 @keyframes flutuar {
-  from { transform: translateY(-10px); }
-  to { transform: translateY(10px); }
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
 
 @keyframes moverEstrelas {
-  from { transform: translate(0, 0); }
-  to { transform: translate(60px, 60px); }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(60px, 60px);
+  }
 }
 
 /* Botão voltar */
@@ -256,30 +275,57 @@
 /* === RESPONSIVIDADE === */
 /* === ESTRELAS RESPONSIVAS === */
 @media (max-width: 1200px) {
-  .estrela { width: 34px; height: 34px; }
+  .estrela {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 @media (max-width: 768px) {
-  .estrela { width: 44px; height: 44px; } /* maior no tablet/celular */
+  .estrela {
+    width: 44px;
+    height: 44px;
+  } /* maior no tablet/celular */
 }
 
 @media (max-width: 480px) {
-  .estrela { width: 60px; height: 60px; } /* bem maior em celular pequeno */
+  .estrela {
+    width: 60px;
+    height: 60px;
+  } /* bem maior em celular pequeno */
 }
 
 /* === MODAL RESPONSIVO === */
 @media (max-width: 1200px) {
-  .modal-content img { width: 75%; max-width: 85%; }
+  .modal-content img {
+    width: 75%;
+    max-width: 85%;
+  }
 }
 
 @media (max-width: 768px) {
-  .modal-content img { width: 80%; max-width: 95%; }
-  .modal-content { transform: scale(1); } /* não reduz tanto em telas menores */
+  .modal-content img {
+    width: 80%;
+    max-width: 95%;
+  }
+  .modal-content {
+    transform: scale(1);
+  } /* não reduz tanto em telas menores */
 }
 
 @media (max-width: 480px) {
-  .modal-content img { width: 95%; max-width: 100%; }
-  .modal-content { transform: scale(1.45); } /* levemente maior em celulares */
-  .modal-text { font-size: 1.5rem; }
-  .fechar { padding: 12px 30px; font-size: 1.3rem; } /* botão mais clicável */
+  .modal-content img {
+    width: 95%;
+    max-width: 100%;
+  }
+  .modal-content {
+    transform: scale(1.45);
+  } /* levemente maior em celulares */
+  .modal-text {
+    font-size: 1.5rem;
+  }
+  .fechar {
+    padding: 12px 30px;
+    font-size: 1.3rem;
+  } /* botão mais clicável */
 }

@@ -132,7 +132,7 @@ function openGameModal() {
 }
 
 // esconder os botoes
-document.querySelectorAll(".fechar-modal").forEach(btn => {
+document.querySelectorAll(".fechar-modal").forEach((btn) => {
   btn.addEventListener("click", () => {
     document.getElementById("mobile-controls").style.display = "none";
   });

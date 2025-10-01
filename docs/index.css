@@ -230,22 +230,22 @@ button.btn img.setas {
 
 /* imagem normal */
 #seta-cima {
-  background-image: url("imagens/up.png");
+  background-image: url("../docs/imagens/up.png");
   transition: 0.6s ease;
 }
 #seta-baixo {
-  background-image: url("imagens/down.png");
+  background-image: url("../docs/imagens/down.png");
   transition: 0.6s ease;
 }
 
 /* imagem no hover */
 #seta-cima:hover {
-  background-image: url("imagens/up-hover.png");
+  background-image: url("../docs/imagens/up-hover.png");
   width: 45px;
   transition: 0.6s ease;
 }
 #seta-baixo:hover {
-  background-image: url("imagens/down-hover.png");
+  background-image: url("../docs/imagens/down-hover.png");
   width: 45px;
   transition: 0.6s ease;
 }
@@ -266,12 +266,12 @@ button.btn img.setas {
 #voltar-btn {
   display: flex;
   justify-content: flex-start;
-  background-image: url("imagens/voltar.png");
+  background-image: url("../docs/imagens/voltar.png");
   transition: 0.6s ease;
   width: 40px;
 }
 #voltar-btn:hover {
-  background-image: url("imagens/voltar-hover.png");
+  background-image: url("../docs/imagens/voltar-hover.png");
   transition: 0.6s ease;
   width: 45px;
 }
