@@ -254,32 +254,33 @@
 }
 
 /* === RESPONSIVIDADE === */
-
-/* Estrelas maiores em telas menores */
+/* === ESTRELAS RESPONSIVAS === */
 @media (max-width: 1200px) {
   .estrela { width: 14px; height: 14px; }
 }
 
 @media (max-width: 768px) {
-  .estrela { width: 18px; height: 18px; }
+  .estrela { width: 24px; height: 24px; } /* maior no tablet/celular */
 }
 
 @media (max-width: 480px) {
-  .estrela { width: 22px; height: 22px; }
+  .estrela { width: 30px; height: 30px; } /* bem maior em celular pequeno */
 }
 
-/* Modal responsivo */
+/* === MODAL RESPONSIVO === */
 @media (max-width: 1200px) {
-  .modal-content img { width: 50%; max-width: 80%; }
+  .modal-content img { width: 60%; max-width: 85%; }
 }
 
 @media (max-width: 768px) {
-  .modal-content img { width: 70%; max-width: 90%; }
-  .modal-content { transform: scale(0.9); }
+  .modal-content img { width: 80%; max-width: 95%; }
+  .modal-content { transform: scale(1); } /* não reduz tanto em telas menores */
 }
 
 @media (max-width: 480px) {
-  .modal-content img { width: 90%; max-width: 95%; }
-  .modal-content { transform: scale(1); }
-  .modal-text { font-size: 1.1rem; }
+  .modal-content img { width: 95%; max-width: 100%; }
+  .modal-content { transform: scale(1.05); } /* levemente maior em celulares */
+  .modal-text { font-size: 1.3rem; }
+  .fechar { padding: 12px 30px; font-size: 1rem; } /* botão mais clicável */
 }
+  
