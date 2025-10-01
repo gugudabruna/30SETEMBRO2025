@@ -279,8 +279,7 @@
 
 @media (max-width: 480px) {
   .modal-content img { width: 95%; max-width: 100%; }
-  .modal-content { transform: scale(1.05); } /* levemente maior em celulares */
-  .modal-text { font-size: 1.3rem; }
-  .fechar { padding: 12px 30px; font-size: 1rem; } /* botão mais clicável */
+  .modal-content { transform: scale(1.45); } /* levemente maior em celulares */
+  .modal-text { font-size: 1.5rem; }
+  .fechar { padding: 12px 30px; font-size: 1.3rem; } /* botão mais clicável */
 }
-  
