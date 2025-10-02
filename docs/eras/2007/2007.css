@@ -69,7 +69,7 @@ body {
 
 .fundo {
   position: relative; /* importante para posicionamento do botão */
-  background-image: url("../../imagens/fundocinza.png");
+  background-image: url("../../eras/2007/media/fundoazul2007.png");
   background-size: cover;
   background-position: center bottom; /* importante: centraliza na mesa */
   background-repeat: no-repeat;
@@ -87,9 +87,9 @@ body {
   margin: auto;
   cursor: pointer;
   --screen-top: 25.5%;
-  --screen-left: 19%;
-  --screen-width: 45%;
-  --screen-height: 57.5%;
+  --screen-left: 20%;
+  --screen-width: 47%;
+  --screen-height: 48.5%;
 }
 
 /* Conteúdo dentro da TV fica atrás */
@@ -235,8 +235,6 @@ body {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
-
-
 
 /* ---------- RESPONSIVIDADE ---------- */
 

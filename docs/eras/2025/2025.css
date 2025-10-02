@@ -45,7 +45,7 @@
 
 .fundo {
   position: relative; /* importante para posicionamento do botão */
-  background-image: url("../2023/media/fundoverde2023.png");
+  background-image: url("../2025/media/fundolilas2025.png");
   background-size: cover;
   background-position: center bottom; /* importante: centraliza na mesa */
   background-repeat: no-repeat;

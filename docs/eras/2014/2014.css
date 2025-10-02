@@ -1,5 +1,5 @@
 .era-2014 {
-  background: linear-gradient(to left, #4d5b6b, #c0c0c0);
+  background: linear-gradient(to left, #4b2e12, #d57a33);
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -10,12 +10,12 @@
 }
 .era-2014 #ano-selecionado {
   background-color: transparent;
-  color: #ffffff;
+  color: #ff923e;
+  border: 4px solid #ff923e;
   transition: 0.6s ease;
-  border: 4px solid #ffffff;
 }
 .era-2014 #ano-selecionado:hover {
-  background-color: #ffffff6b;
+  background-color: #ff923e;
   color: #2229306b;
   border: 0px solid #222930bc;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
@@ -27,11 +27,11 @@
 }
 .era-2014 #selecionar-btn:hover {
   font-size: 3.2rem;
-  box-shadow: 0 0 30px rgba(251, 235, 15, 0.5);
-  background-color: #ffffff;
+  box-shadow: 0 0 30px rgba(255, 161, 9, 0.5);
+  background-color: #fadfca;
   transition: 0.6s ease;
-  border: 2px solid #c0c0c0;
-  color: #c0c0c0;
+  border: 2px solid #d57a33;
+  color: #e2853d;
 }
 
 .era-2014 #voltar-btn {
@@ -62,22 +62,6 @@ body {
   z-index: 0;
 }
 
-.era-2014 #selecionar-btn {
-  text-transform: uppercase;
-  font-weight: 800;
-  color: white;
-  transition: 0.6s ease;
-}
-.era-2014 #selecionar-btn:hover {
-  font-size: 3.2rem;
-  box-shadow: 0 0 30px rgba(15, 137, 251, 0.5);
-  background-color: #ffffff;
-  transition: 0.6s ease;
-  border: 6px solid #ffffff;
-  color: #5661fa;
-  transition: 0.6s ease;
-}
-
 .era-2014 #voltar-btn {
   display: flex;
   justify-content: flex-start;
@@ -93,7 +77,7 @@ body {
 
 .fundo {
   position: relative;
-  background-image: url("../../imagens/fundocinza.png");
+  background-image: url("../../eras/2014/media/fundolaranja2014.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -113,8 +97,8 @@ body {
   cursor: pointer;
   --screen-top: 25.5%;
   --screen-left: 19%;
-  --screen-width: 45%;
-  --screen-height: 57.5%;
+  --screen-width: 50%;
+  --screen-height: 54.5%;
 }
 
 /* Conteúdo dentro da TV */
@@ -125,11 +109,13 @@ body {
   width: var(--screen-width);
   height: var(--screen-height);
   border-radius: 4px;
+  aspect-ratio: 4 / 3; /* força a proporção correta */
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  background: black; /* fundo da tela */
 }
 
 /* Moldura da TV */
