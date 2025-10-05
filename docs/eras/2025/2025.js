@@ -1,17 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const btnVoltar = document.getElementById("voltar-btn2025");
 
-  // Hover do botão voltar
-  if (btnVoltar) {
-    btnVoltar.addEventListener("mouseenter", () => {
-      btnVoltar.src = "../../../docs/imagens/voltar-hover.png";
-    });
-
-    btnVoltar.addEventListener("mouseleave", () => {
-      btnVoltar.src = "../../../docs/imagens/voltar.png";
-    });
-  }
-
   // Modal
   const modal = document.getElementById("modalVideo");
   const tv = document.querySelector(".conteudo-na-tv");
@@ -45,17 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-function transicaoWormhole(urlDestino) {
-  const wormhole = document.getElementById("wormhole");
-
-  gsap.to(wormhole, {
-    width: "3000px",
-    height: "3000px",
-    duration: 1.2,
-    ease: "power4.in",
-    onComplete: () => {
-      window.location.href = urlDestino;
-    },
-  });
-}
