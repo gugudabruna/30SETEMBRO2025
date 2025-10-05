@@ -37,12 +37,11 @@
 .era-2014 #voltar-btn {
   display: flex;
   justify-content: flex-start;
-  background-image: url("../../../docs/imagens/voltar.png");
   transition: 0.6s ease;
   width: 40px;
 }
 .era-2014 #voltar-btn:hover {
-  background-image: url("../../../docs/imagens/voltar-hover.png");
+
   transition: 0.6s ease;
   width: 45px;
 }
