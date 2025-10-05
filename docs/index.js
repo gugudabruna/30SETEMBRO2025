@@ -100,27 +100,9 @@ const setaCima = document.getElementById("seta-cima");
 const setaBaixo = document.getElementById("seta-baixo");
 const btnVoltar = document.getElementById("voltar-btn");
 
-setaCima.addEventListener("mouseenter", () => {
-  setaCima.src = "../docs/imagens/up-hover.png";
-  setaCima.addEventListener("mouseleave", () => {
-    setaCima.src = "../docs/imagens/up.png";
-  });
-});
 
-setaBaixo.addEventListener("mouseenter", () => {
-  setaBaixo.src = "../docs/imagens/down-hover.png";
-});
-setaBaixo.addEventListener("mouseleave", () => {
-  setaBaixo.src = "../docs/imagens/down.png";
-});
 
-// botão voltar
-btnVoltar.addEventListener("mouseenter", () => {
-  btnVoltar.src = "../docs/imagens/voltar-hover.png";
-});
-btnVoltar.addEventListener("mouseleave", () => {
-  btnVoltar.src = "../docs/imagens/voltar.png";
-});
+
 
 function createHeart() {
   const classes = document.body.className.split(" ");
