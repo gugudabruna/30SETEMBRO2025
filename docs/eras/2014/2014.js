@@ -1,17 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const btnVoltar = document.getElementById("voltar-btn2014");
 
-  // Só adiciona eventos se o botão existir
-  if (btnVoltar) {
-    btnVoltar.addEventListener("mouseenter", () => {
-      btnVoltar.src = "../../../docs/imagens/voltar-hover.png";
-    });
-
-    btnVoltar.addEventListener("mouseleave", () => {
-      btnVoltar.src = "../../../docs/imagens/voltar.png";
-    });
-  }
-
   // Modal
   const modal = document.getElementById("modalVideo");
   const tv = document.querySelector(".conteudo-na-tv");
