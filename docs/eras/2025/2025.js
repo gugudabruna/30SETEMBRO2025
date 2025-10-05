@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hover do botão voltar
   if (btnVoltar) {
     btnVoltar.addEventListener("mouseenter", () => {
-      btnVoltar.src = "../../imagens/voltar-hover.png";
+      btnVoltar.src = "../../../docs/imagens/voltar-hover.png";
     });
 
     btnVoltar.addEventListener("mouseleave", () => {
-      btnVoltar.src = "../../imagens/voltar.png";
+      btnVoltar.src = "../../../docs/imagens/voltar.png";
     });
   }
 
