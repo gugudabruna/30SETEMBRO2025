@@ -111,7 +111,7 @@ function gerarEstrelas() {
     estrela.style.left = `${Math.random() * 98}%`;
 
     // tamanho aleatório
-    const tamanho = Math.random() * 8 + 4; // entre 4px e 12px
+    const tamanho = Math.random() * 10 + 2; // entre 4px e 12px (alterei, n é mais isso)
     estrela.style.width = `${tamanho}px`;
     estrela.style.height = `${tamanho}px`;
 
