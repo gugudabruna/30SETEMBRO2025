@@ -45,17 +45,3 @@ function closeModal() {
     video.currentTime = 0;
   }
 }
-
-function transicaoWormhole(urlDestino) {
-  const wormhole = document.getElementById("wormhole");
-
-  gsap.to(wormhole, {
-    width: "3000px",
-    height: "3000px",
-    duration: 1.2,
-    ease: "power4.in",
-    onComplete: () => {
-      window.location.href = urlDestino;
-    },
-  });
-}
