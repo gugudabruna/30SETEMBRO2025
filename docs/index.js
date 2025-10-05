@@ -101,25 +101,25 @@ const setaBaixo = document.getElementById("seta-baixo");
 const btnVoltar = document.getElementById("voltar-btn");
 
 setaCima.addEventListener("mouseenter", () => {
-  setaCima.src = "imagens/up-hover.png";
+  setaCima.src = "../docs/imagens/up-hover.png";
   setaCima.addEventListener("mouseleave", () => {
-    setaCima.src = "imagens/up.png";
+    setaCima.src = "../docs/imagens/up.png";
   });
 });
 
 setaBaixo.addEventListener("mouseenter", () => {
-  setaBaixo.src = "imagens/down-hover.png";
+  setaBaixo.src = "../docs/imagens/down-hover.png";
 });
 setaBaixo.addEventListener("mouseleave", () => {
-  setaBaixo.src = "imagens/down.png";
+  setaBaixo.src = "../docs/imagens/down.png";
 });
 
 // botão voltar
 btnVoltar.addEventListener("mouseenter", () => {
-  btnVoltar.src = "imagens/voltar-hover.png";
+  btnVoltar.src = "../docs/imagens/voltar-hover.png";
 });
 btnVoltar.addEventListener("mouseleave", () => {
-  btnVoltar.src = "imagens/voltar.png";
+  btnVoltar.src = "../docs/imagens/voltar.png";
 });
 
 function createHeart() {
