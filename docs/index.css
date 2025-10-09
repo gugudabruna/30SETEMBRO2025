@@ -153,6 +153,9 @@ html {
   transition: 0.6s ease;
   font-weight: bold;
 }
+#ano-selecionado:hover {
+  font-weight: bolder;
+}
 
 #ano-posterior {
   font-size: 70px;
@@ -259,6 +262,7 @@ button.btn img.setas {
 #selecionar-btn:hover {
   text-transform: uppercase;
   font-size: 3.2rem;
+  font-weight: bolder;
   color: #450050;
   transition: 0.6s ease;
 }
